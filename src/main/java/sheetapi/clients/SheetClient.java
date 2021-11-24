@@ -25,7 +25,8 @@ public class SheetClient {
     private static final GsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
 
     private static final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS_READONLY);
-    private static final String CREDENTIALS_FILE_PATH = "/home/joao/Documents/Projects/2021/Tech Hunter Brasil/CandidatosService/google-sheet-java/demo/src/credentials.json";
+    private static final String PATH_PROJETO = System.getProperty("user.dir");;
+    private static final String CREDENTIALS_FILE_PATH = PATH_PROJETO + "/src/credentials.json";
 
     // Métodos Públicos
     public static List<String> getValoresPorColuna(

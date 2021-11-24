@@ -10,6 +10,7 @@ public class RoboMatchTeste {
     @Test
     public void testeNull() {
 
+        /*
         List<String> emails = RoboMatch.getEmailsMatch(
                 null,
                 null,
@@ -17,6 +18,9 @@ public class RoboMatchTeste {
                 null,
                 null
         );
+        */
+
+        System.out.println(System.getProperty("user.dir"));
 
 
     }
