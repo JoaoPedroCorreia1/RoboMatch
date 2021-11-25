@@ -25,7 +25,7 @@ public class SheetClient {
     private static final GsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
 
     private static final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS_READONLY);
-    private static final String PATH_PROJETO = System.getProperty("user.dir");;
+    private static final String PATH_PROJETO = System.getProperty("user.dir");
     private static final String CREDENTIALS_FILE_PATH = PATH_PROJETO + "/src/credentials.json";
 
     // Métodos Públicos
