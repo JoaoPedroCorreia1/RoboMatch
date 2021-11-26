@@ -4,29 +4,39 @@ import java.util.List;
 
 public class Vaga {
 
+    private String email;
+
     private List<String> cargosDejesados;
-    private List<String> senioridades;
+    private String senioridade;
     private List<String> disponibilidadeLocalRemoto;
     private List<String> periodosDisponiveis;
 
     public Vaga(
+            String email,
+
             List<String> cargosDejesados,
-            List<String> senioridades,
+            String senioridade,
             List<String> disponibilidadeLocalRemoto,
             List<String> periodosDisponiveis
     ) {
+        this.email = email;
+
         this.cargosDejesados = cargosDejesados;
-        this.senioridades = senioridades;
+        this.senioridade = senioridade;
         this.disponibilidadeLocalRemoto = disponibilidadeLocalRemoto;
         this.periodosDisponiveis = periodosDisponiveis;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public List<String> getCargosDejesados() {
         return cargosDejesados;
     }
 
-    public List<String> getsenioridades() {
-        return senioridades;
+    public String getSenioridade() {
+        return senioridade;
     }
 
     public List<String> getDisponibilidadeLocalRemoto() {

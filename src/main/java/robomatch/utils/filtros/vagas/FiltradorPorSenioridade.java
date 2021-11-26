@@ -22,11 +22,7 @@ public class FiltradorPorSenioridade {
                         .getVagas())
             {
 
-                for(String senioridade
-                        : vaga
-                            .getsenioridades())
-
-                if (senioridade
+                if (vaga.getSenioridade()
                         .equalsIgnoreCase(senioridadeParaFiltrar)
                 ) {
 
