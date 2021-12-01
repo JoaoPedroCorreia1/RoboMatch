@@ -1,6 +1,6 @@
-package robomatch.models.candidato;
+package models.candidato;
 
-import robomatch.models.candidato.cadastro.Habilidade;
+import models.candidato.cadastro.Habilidade;
 
 import java.util.List;
 
@@ -16,10 +16,9 @@ public class Cadastro {
     private String senioridadePreferencial;
     private String formacao;
 
+    private String curriculo;
+
     private List<Habilidade> habilidades;
-
-
-
 
     public Cadastro(
             String nome,
@@ -32,6 +31,8 @@ public class Cadastro {
             String senioridadePreferencial,
             String formacao,
 
+            String curriculo,
+
             List<Habilidade> habilidades
     ) {
         this.nome = nome;
@@ -43,6 +44,8 @@ public class Cadastro {
         this.linkedin = linkedin;
         this.senioridadePreferencial = senioridadePreferencial;
         this.formacao = formacao;
+
+        this.curriculo = curriculo;
 
         this.habilidades = habilidades;
     }
@@ -75,8 +78,49 @@ public class Cadastro {
         return formacao;
     }
 
+    public String getCurriculo() {
+        return curriculo;
+    }
+
     public List<Habilidade> getHabilidades() {
         return habilidades;
     }
 
+    @Override
+    public String toString()
+    {
+        String s = "### Cadastro ###";
+        s += "\n";
+
+        s += "Nome: " + getNome();
+        s += "\n";
+
+        s += "Email: " + getEmail();
+        s += "\n";
+
+        s += "Cidade: " + getCidade();
+        s += "\n";
+
+        s += "Estado: " + getEstado();
+        s += "\n";
+
+        s += "Linkedin: " + getLinkedin();
+        s += "\n";
+
+        s += "Senioridade Preferêncial: " + getSenioridadePreferencial();
+        s += "\n";
+
+        s += "Formação: " + getFormacao();
+        s += "\n";
+
+        s += "Curriculo: " + getCurriculo();
+        s += "\n";
+
+        for(Habilidade habilidade : habilidades)
+        {
+            s += habilidade.toString();
+        }
+
+        return s;
+    }
 }

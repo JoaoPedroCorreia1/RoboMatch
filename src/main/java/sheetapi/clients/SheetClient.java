@@ -32,36 +32,76 @@ public class SheetClient {
     public static List<String> getValoresPorColuna(
             char coluna,
             String spreadsheetId
-    ) throws
-            IOException,
-            GeneralSecurityException
-    {
+    ) {
         String range = "!" + coluna + ":" + coluna;
 
-        ValueRange response = getService().spreadsheets().values().get(spreadsheetId, range).execute();
+        List<String> valoresColuna = getValores(
+                range,
+                spreadsheetId
+        );
 
-        List<List<Object>> values = response.getValues();
+        valoresColuna.remove(0);
 
-        List<String> strs = new ArrayList<>();
+        return valoresColuna;
+    }
 
-        if (values == null || values.isEmpty()) {
+    public static String getValorCelula(
+            char posicao,
+            int indice,
+            String spreadsheetId
+    )
+    {
+        String range = "!" + posicao + indice;
 
-        } else {
+        List<String> valores = getValores(
+                range,
+                spreadsheetId
+        );
 
-            for (List row : values) {
-
-                Iterator iterator = row.listIterator();
-
-                while (iterator.hasNext()) {
-
-                    strs.add((String) iterator.next());
-
-                }
-
-            }
+        String valor = "";
+        if(!valores.isEmpty())
+        {
+            valor = valores.get(0);
         }
 
-        strs.remove(0);
+        return valor;
+    }
+
+    private static List<String> getValores(
+            String range,
+            String spreadsheetId
+    ) {
+        List<String> strs = new ArrayList<>();
+
+        try{
+            ValueRange response
+                    = getService().spreadsheets().values()
+                    .get(
+                            spreadsheetId,
+                            range).execute();
+
+            List<List<Object>> values = response.getValues();
+
+            if (values == null || values.isEmpty()) {
+
+            } else {
+
+                for (List row : values) {
+
+                    Iterator iterator = row.listIterator();
+
+                    while (iterator.hasNext()) {
+
+                        strs.add((String) iterator.next());
+
+                    }
+
+                }
+            }
+
+        } catch (Exception e) {
+
+        }
 
         return strs;
 

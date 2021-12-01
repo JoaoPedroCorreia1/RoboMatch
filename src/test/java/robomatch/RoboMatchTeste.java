@@ -1,27 +1,45 @@
 package robomatch;
 
+import models.candidato.cadastro.Habilidade;
+import org.junit.Assert;
 import org.junit.Test;
-import robomatch.models.Candidato;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class RoboMatchTeste {
 
     @Test
-    public void testeNull() {
+    public void testeJoao() {
 
-        /*
+
         List<String> emails = RoboMatch.getEmailsMatch(
-                null,
-                null,
-                null,
-                null,
-                null
+                Arrays.asList(
+                        "analista de segurança da informação"
+                ),
+                Arrays.asList(
+                        "estagiário"
+                ),
+                Arrays.asList("Híbrido"),
+                Arrays.asList("Manhã"),
+                Arrays.asList(
+                        new Habilidade(
+                                "programação",
+                                1
+                        ),
+                        new Habilidade(
+                                "sql",
+                                2
+                        )
+                )
         );
-        */
 
-        System.out.println(System.getProperty("user.dir"));
-
+        Assert.assertEquals(
+                emails,
+                Arrays.asList(
+                        "jpmourasilva@gmail.com"
+                )
+        );
 
     }
 

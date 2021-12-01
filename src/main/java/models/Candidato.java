@@ -1,8 +1,7 @@
-package robomatch.models;
+package models;
 
-import robomatch.models.candidato.Cadastro;
-import robomatch.models.candidato.Vaga;
-import robomatch.models.candidato.cadastro.Habilidade;
+import models.candidato.Cadastro;
+import models.candidato.Vaga;
 
 import java.util.List;
 
@@ -27,4 +26,20 @@ public class Candidato {
     public List<Vaga> getVagas() {
         return vagas;
     }
+
+    @Override
+    public String toString(){
+        String s = "### Candidato ###";
+        s += "\n";
+
+        s += cadastro.toString();
+
+        for(Vaga vaga : vagas)
+        {
+            s += vaga.toString();
+        }
+
+        return s;
+    }
+
 }

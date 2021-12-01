@@ -2,8 +2,8 @@ package testsresources;
 
 import java.util.List;
 
-import robomatch.models.Candidato;
-import robomatch.models.candidato.cadastro.Habilidade;
+import models.Candidato;
+import models.candidato.cadastro.Habilidade;
 
 public class CriadorCandidatoFalso {
 

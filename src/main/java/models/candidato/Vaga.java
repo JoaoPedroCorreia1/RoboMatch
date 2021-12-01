@@ -1,4 +1,4 @@
-package robomatch.models.candidato;
+package models.candidato;
 
 import java.util.List;
 
@@ -46,5 +46,43 @@ public class Vaga {
     public List<String> getPeriodosDisponiveis() {
         return periodosDisponiveis;
     }
+
+    @Override
+    public String toString()
+    {
+        String s = "### Vaga ###";
+        s += "\n";
+
+        s += "Email: " + getEmail();
+        s += "\n";
+
+        s += "Cargos Desejados: ";
+        for(String cargoDesejado : getCargosDejesados())
+        {
+            s += cargoDesejado + ", ";
+        }
+        s += "\n";
+
+        s += "Senioridade preferencial: " + getSenioridade();
+        s += "\n";
+
+        s += "Disponibilidades Local/Remoto: ";
+        for(String localRemoto : getDisponibilidadeLocalRemoto())
+        {
+            s += localRemoto + ", ";
+        }
+        s += "\n";
+
+        s += "Períodos disponíveis: ";
+        for(String periodo : getPeriodosDisponiveis())
+        {
+            s += periodo + ", ";
+        }
+        s += "\n";
+
+        return s;
+
+    }
+
 
 }

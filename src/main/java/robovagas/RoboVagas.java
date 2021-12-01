@@ -1,7 +1,6 @@
 package robovagas;
 
-import robomatch.models.candidato.Cadastro;
-import robomatch.models.candidato.Vaga;
+import models.candidato.Vaga;
 import sheetapi.service.VagasService;
 import utils.SeparadorString;
 

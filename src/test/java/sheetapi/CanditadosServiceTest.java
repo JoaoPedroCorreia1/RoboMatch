@@ -1,6 +1,7 @@
 package sheetapi;
 
-import sheetapi.service.CandidatosService;
+import sheetapi.clients.SheetClient;
+import sheetapi.service.CadastrosService;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,35 +16,8 @@ public class CanditadosServiceTest
 
     public static void main(String... args) throws IOException, GeneralSecurityException {
 
-        char[] colunas = {
-                'a', 'b', 'c', 'd',
-                'e', 'f', 'g', 'h',
-                'i', 'j', 'k', 'l'
-        };
-
-        for(int c = 0; c < colunas.length; c++)
-        {
-            testarColuna(colunas[c]);
-        }
 
     }
 
-    @Test
-    private static void testarColuna(
-            char coluna
-    )
-    {
-        List<String> strs = CandidatosService.getValoresPorColuna(
-                coluna
-        );
-
-        for(String str: strs)
-        {
-            System.out.println(str);
-        }
-
-        Assert.assertNotNull(strs);
-
-    }
 
 }

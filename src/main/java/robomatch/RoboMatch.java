@@ -1,13 +1,13 @@
 package robomatch;
 
-import robomatch.models.Candidato;
-import robomatch.models.candidato.cadastro.Habilidade;
-import robomatch.utils.filtros.cadastros.FiltradorPorPeriodo;
+import models.Candidato;
+import models.candidato.cadastro.Habilidade;
+import robocandidatos.RoboCandidatos;
+import robomatch.utils.filtros.vagas.FiltradorPorPeriodos;
 import robomatch.utils.filtros.vagas.FiltradorPorLocalRemoto;
-import robomatch.utils.filtros.vagas.FiltradorPorSenioridade;
-import testsresources.CriadorListaCandidatoFalso;
-import robomatch.utils.filtros.vagas.FiltradorPorCargo;
-import robomatch.utils.filtros.cadastros.FiltradorPorHabilidade;
+import robomatch.utils.filtros.vagas.FiltradorPorSenioridades;
+import robomatch.utils.filtros.vagas.FiltradorPorCargos;
+import robomatch.utils.filtros.cadastros.FiltradorPorHabilidades;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,61 +36,57 @@ public class RoboMatch {
             List<Habilidade> habilidadesFiltrar
     ) {
 
-        List<Candidato> candidatos = CriadorListaCandidatoFalso.criar();
-
-        List<Candidato> selecionados = new ArrayList<Candidato>();
+        List<Candidato> selecionados = RoboCandidatos.getCandidatos();
 
         // filtrar por cargo
-        for (String cargoFiltrar : cargosFiltrar) {
+        if(cargosFiltrar != null)
+        {
 
-            selecionados = FiltradorPorCargo.filtrar(
-                    cargoFiltrar,
-                    candidatos
+            selecionados = FiltradorPorCargos.filtrar(
+                    cargosFiltrar,
+                    selecionados
             );
 
         }
 
         // filtrar por senioridade
-        for (String senioridadeFiltrar : senioridadesFiltrar)
+        if(senioridadesFiltrar != null)
         {
 
-            selecionados = FiltradorPorSenioridade.filtrar(
-                    senioridadeFiltrar,
-                    candidatos
-            );
+            selecionados = FiltradorPorSenioridades.filtrar(
+                    senioridadesFiltrar,
+                    selecionados
 
+            );
         }
 
         // filtrar por local/remoto
-        for (String disponibilidadeLocalRemotoFiltrar
-                : disponibilidadesLocalRemotoFiltrar)
+        if(disponibilidadesLocalRemotoFiltrar != null)
         {
 
             selecionados = FiltradorPorLocalRemoto.filtrar(
-                    disponibilidadeLocalRemotoFiltrar,
-                    candidatos
-            );
+                    disponibilidadesLocalRemotoFiltrar,
+                    selecionados
 
+            );
         }
 
         // filtrar por período
-        for (String disponibilidadePeriodoFiltrar
-                : disponibilidadesPeriodoFiltrar)
+        if(disponibilidadesPeriodoFiltrar != null)
         {
 
-            selecionados = FiltradorPorPeriodo.filtrar(
-                    disponibilidadePeriodoFiltrar,
-                    candidatos
+            selecionados = FiltradorPorPeriodos.filtrar(
+                    disponibilidadesPeriodoFiltrar,
+                    selecionados
             );
 
         }
 
         // filtrar por habilidade
-        for(Habilidade habilidadeFiltrar : habilidadesFiltrar)
-        {
+        if(habilidadesFiltrar != null) {
 
-            selecionados = FiltradorPorHabilidade.filtrar(
-                    habilidadeFiltrar,
+            selecionados = FiltradorPorHabilidades.filtrar(
+                    habilidadesFiltrar,
                     selecionados
             );
 

@@ -1,4 +1,4 @@
-package robomatch.models.candidato.cadastro;
+package models.candidato.cadastro;
 
 public class Habilidade {
 
@@ -20,6 +20,21 @@ public class Habilidade {
     public int getNivel()
     {
         return nivel;
+    }
+
+    @Override
+    public String toString()
+    {
+        String s = "### Habilidade ###";
+        s += "\n";
+
+        s += "Nome: " + getNome();
+        s += "\n";
+
+        s += "Nível: " + getNivel();
+        s += "\n";
+
+        return s;
     }
     
 }

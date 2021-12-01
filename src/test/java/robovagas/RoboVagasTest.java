@@ -2,7 +2,7 @@ package robovagas;
 
 import org.junit.Assert;
 import org.junit.Test;
-import robomatch.models.candidato.Vaga;
+import models.candidato.Vaga;
 
 import static org.junit.Assert.assertTrue;
 
