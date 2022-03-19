@@ -7,7 +7,7 @@ Feito pelo time Base2 no TechHunter 2021.
 - Maven 3.6.3
 
 # How to run
-É Possível obter um match acessando o método "getEmailsMatch" em src/main/java/RoboMatch que retorna uma lista de emails utilizando informações de formulários do google drive.
+É Possível obter um match acessando o método "getEmailsMatch" em src/main/java/RoboMatch que retorna uma lista de emails utilizando dados de planilhas google obtidas de formulários google.
 
 # Match
 ## Method Parameters
