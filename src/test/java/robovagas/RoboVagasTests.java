@@ -11,13 +11,8 @@ import models.candidato.Vaga;
 
 public class RoboVagasTest {
 
-    public static void main(String... args) throws IOException, GeneralSecurityException {
-
-        testar();
-    }
-
     @Test
-    private static void testar() {
+    public void obterVagasComSucesso() {
         List<Vaga> vagas = RoboVagas.obterVagas();
 
         int i = 1;

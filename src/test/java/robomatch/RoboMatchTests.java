@@ -10,7 +10,7 @@ import java.util.List;
 public class RoboMatchTeste {
 
     @Test
-    public void testeJoao() {
+    public void obterCandidatoJoaoComSucesso() {
         List<String> emails = RoboMatch.getEmailsMatch(
                 Arrays.asList(
                         "analista de segurança da informação"
