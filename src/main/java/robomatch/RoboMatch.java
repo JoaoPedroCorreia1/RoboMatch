@@ -94,7 +94,6 @@ public class RoboMatch {
 
         // retornar emails
         return emailsSelecionados;
-
     }
 
 }

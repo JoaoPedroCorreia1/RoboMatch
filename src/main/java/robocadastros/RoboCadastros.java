@@ -1,14 +1,13 @@
 package robocadastros;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import models.candidato.Cadastro;
 import models.candidato.cadastro.Habilidade;
 import sheetapi.service.CadastrosService;
 import utils.CriadorHabilidades;
 import utils.SeparadoCidadeEstado;
-import utils.SeparadorString;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class RoboCadastros {
 
