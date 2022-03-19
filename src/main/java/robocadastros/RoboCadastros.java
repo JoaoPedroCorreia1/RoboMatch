@@ -12,49 +12,34 @@ import java.util.List;
 
 public class RoboCadastros {
 
-    public static List<Cadastro> obterCadastros()
-    {
-
+    public static List<Cadastro> obterCadastros() {
         // obter dados
-        List<String> nomeColuna
-                = CadastrosService.getNomeColuna();
+        List<String> nomeColuna = CadastrosService.getNomeColuna();
 
-        List<String> emailColuna
-                = CadastrosService.getEmailColuna();
+        List<String> emailColuna = CadastrosService.getEmailColuna();
 
-        List<String> linkedinColuna
-                = CadastrosService.getLinkedinColuna();
+        List<String> linkedinColuna = CadastrosService.getLinkedinColuna();
 
-        List<String> senioridadePreferencialColuna
-                = CadastrosService
-                      .getSenioridadePreferencialColuna();
+        List<String> senioridadePreferencialColuna = CadastrosService
+                .getSenioridadePreferencialColuna();
 
-        List<String> cidadeEstadoColuna
-                = CadastrosService.getCidadeEstadoColuna();
+        List<String> cidadeEstadoColuna = CadastrosService.getCidadeEstadoColuna();
 
-        List<String> habilidadeNenhumaColuna
-                = CadastrosService
-                      .getHabilidadeNenhumaColuna(
-                              emailColuna.size()
-                      );
+        List<String> habilidadeNenhumaColuna = CadastrosService
+                .getHabilidadeNenhumaColuna(
+                        emailColuna.size());
 
-        List<String> habilidadeConceitualColuna
-                = CadastrosService
+        List<String> habilidadeConceitualColuna = CadastrosService
                 .getHabilidadeConceitualColuna(
-                        emailColuna.size()
-                );
+                        emailColuna.size());
 
-        List<String> habilidadePraticanteColuna
-                = CadastrosService
+        List<String> habilidadePraticanteColuna = CadastrosService
                 .getHabilidadePraticanteColuna(
-                        emailColuna.size()
-                );
+                        emailColuna.size());
 
-        List<String> formacaoColuna
-                = CadastrosService.getFormacaoColuna();
+        List<String> formacaoColuna = CadastrosService.getFormacaoColuna();
 
-        List<String> curriculoColuna
-                = CadastrosService.getCurriculoColuna();
+        List<String> curriculoColuna = CadastrosService.getCurriculoColuna();
 
         // iterar por linha
 
@@ -62,32 +47,27 @@ public class RoboCadastros {
 
         int quantidadeCadastros = emailColuna.size();
 
-        for(int i = 0; i < quantidadeCadastros; i++)
-        {
+        for (int i = 0; i < quantidadeCadastros; i++) {
             String nome = nomeColuna.get(i);
 
             String email = emailColuna.get(i);
 
             String linkedin = linkedinColuna.get(i);
 
-            String senioridadePreferencial
-                    = senioridadePreferencialColuna.get(i);
+            String senioridadePreferencial = senioridadePreferencialColuna.get(i);
 
             // cidadeEstado
-            List<String> cidadeEstado
-                    = SeparadoCidadeEstado
-                        .obterCidadeEstado(cidadeEstadoColuna.get(i));
+            List<String> cidadeEstado = SeparadoCidadeEstado
+                    .obterCidadeEstado(cidadeEstadoColuna.get(i));
 
             String cidade = cidadeEstado.get(0);
             String estado = cidadeEstado.get(1);
 
             // habilidades
-            List<Habilidade> habilidades
-                    = CriadorHabilidades.criar(
-                            habilidadeNenhumaColuna.get(i),
-                            habilidadeConceitualColuna.get(i),
-                            habilidadePraticanteColuna.get(i)
-                    );
+            List<Habilidade> habilidades = CriadorHabilidades.criar(
+                    habilidadeNenhumaColuna.get(i),
+                    habilidadeConceitualColuna.get(i),
+                    habilidadePraticanteColuna.get(i));
 
             String formacao = formacaoColuna.get(i);
 
@@ -108,9 +88,7 @@ public class RoboCadastros {
 
                             curriculo,
 
-                            habilidades
-                    )
-            );
+                            habilidades));
         }
 
         return cadastros;

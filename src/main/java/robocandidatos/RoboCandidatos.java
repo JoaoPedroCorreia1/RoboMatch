@@ -12,34 +12,26 @@ import java.util.List;
 
 public class RoboCandidatos {
 
-    public static List<Candidato> getCandidatos()
-    {
+    public static List<Candidato> getCandidatos() {
         List<Candidato> candidatos = new ArrayList<>();
 
         // obter dados
-        List<Cadastro> casdastrosTotal
-                = RoboCadastros.obterCadastros();
+        List<Cadastro> casdastrosTotal = RoboCadastros.obterCadastros();
 
-        List<Vaga> vagasTotal
-                = RoboVagas.obterVagas();
+        List<Vaga> vagasTotal = RoboVagas.obterVagas();
 
-        for(Cadastro cadastro : casdastrosTotal)
-        {
+        for (Cadastro cadastro : casdastrosTotal) {
             String emailAtual = cadastro.getEmail();
 
-            List<Vaga> vagasDoCadastro
-                    = FiltradorVagas
-                          .filtrarPorEmail(
-                                  emailAtual,
-                                  vagasTotal
-                          );
+            List<Vaga> vagasDoCadastro = FiltradorVagas
+                    .filtrarPorEmail(
+                            emailAtual,
+                            vagasTotal);
 
             candidatos.add(
                     new Candidato(
                             cadastro,
-                            vagasDoCadastro
-                    )
-            );
+                            vagasDoCadastro));
 
         }
 

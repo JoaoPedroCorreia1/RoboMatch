@@ -10,21 +10,17 @@ public class FiltradorPorPeriodos {
 
     public static List<Candidato> filtrar(
             List<String> periodosDisponiveisFiltrar,
-            List<Candidato> candidatos
-    ) {
+            List<Candidato> candidatos) {
 
         List<Candidato> selecionados = new ArrayList<Candidato>();
 
-        for (Candidato candidato: candidatos)
-        {
+        for (Candidato candidato : candidatos) {
 
             Candidato candidatoSelecionado = filtrarCandidatoPorPeriodos(
                     periodosDisponiveisFiltrar,
-                    candidato
-            );
+                    candidato);
 
-            if(candidatoSelecionado != null)
-            {
+            if (candidatoSelecionado != null) {
                 selecionados.add(candidatoSelecionado);
             }
 
@@ -36,25 +32,19 @@ public class FiltradorPorPeriodos {
 
     private static Candidato filtrarCandidatoPorPeriodos(
             List<String> periodosDisponiveisFiltrar,
-            Candidato candidato
-    ) {
+            Candidato candidato) {
 
-        for (Vaga vaga: candidato.getVagas())
-        {
+        for (Vaga vaga : candidato.getVagas()) {
 
-            for(String periodoDisponivel
-                    : vaga
+            for (String periodoDisponivel : vaga
                     .getPeriodosDisponiveis()
 
             ) {
 
-                for(String periodoDisponivelFiltrar
-                        : periodosDisponiveisFiltrar
-                ) {
+                for (String periodoDisponivelFiltrar : periodosDisponiveisFiltrar) {
 
                     if (periodoDisponivel
-                            .equalsIgnoreCase(periodoDisponivelFiltrar)
-                    ) {
+                            .equalsIgnoreCase(periodoDisponivelFiltrar)) {
 
                         return candidato;
 

@@ -9,28 +9,21 @@ import java.util.List;
 
 public class RoboVagas {
 
-    public static List<Vaga> obterVagas()
-    {
-
+    public static List<Vaga> obterVagas() {
         // obter dados
-        List<String> emailColuna
-                = VagasService
+        List<String> emailColuna = VagasService
                 .getValoresPorColuna('B');
 
-        List<String> cargosDesejadosColuna
-                = VagasService
+        List<String> cargosDesejadosColuna = VagasService
                 .getValoresPorColuna('C');
 
-        List<String> senioridadeColuna
-                = VagasService
+        List<String> senioridadeColuna = VagasService
                 .getValoresPorColuna('D');
 
-        List<String> disponibilidadesLocalRemotoColuna
-                = VagasService
+        List<String> disponibilidadesLocalRemotoColuna = VagasService
                 .getValoresPorColuna('E');
 
-        List<String> periodosDisponiveisColuna
-                = VagasService
+        List<String> periodosDisponiveisColuna = VagasService
                 .getValoresPorColuna('F');
 
         List<Vaga> vagas = new ArrayList<>();
@@ -38,29 +31,22 @@ public class RoboVagas {
         // iterar por linha
         int quantidadeVagas = emailColuna.size();
 
-        for(int i = 0; i < quantidadeVagas; i++)
-        {
+        for (int i = 0; i < quantidadeVagas; i++) {
             String email = emailColuna.get(i);
 
-            List<String> cargosDesejados
-                    = SeparadorString
+            List<String> cargosDesejados = SeparadorString
                     .separarPorVirgulaEEspaco(
-                            cargosDesejadosColuna.get(i)
-                    );
+                            cargosDesejadosColuna.get(i));
 
             String senioridade = senioridadeColuna.get(i);
 
-            List<String> diponibilidadesLocalRemoto
-                    = SeparadorString
+            List<String> diponibilidadesLocalRemoto = SeparadorString
                     .separarPorVirgulaEEspaco(
-                            disponibilidadesLocalRemotoColuna.get(i)
-                    );
+                            disponibilidadesLocalRemotoColuna.get(i));
 
-            List<String> periodosDisponiveis
-                    = SeparadorString
+            List<String> periodosDisponiveis = SeparadorString
                     .separarPorVirgulaEEspaco(
-                            periodosDisponiveisColuna.get(i)
-                    );
+                            periodosDisponiveisColuna.get(i));
 
             // para cada valor
             vagas.add(
@@ -70,13 +56,10 @@ public class RoboVagas {
                             cargosDesejados,
                             senioridade,
                             diponibilidadesLocalRemoto,
-                            periodosDisponiveis
-                    )
-            );
+                            periodosDisponiveis));
         }
 
         return vagas;
-
     }
 
 }

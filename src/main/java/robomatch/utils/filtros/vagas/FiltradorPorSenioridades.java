@@ -10,19 +10,15 @@ public class FiltradorPorSenioridades {
 
     public static List<Candidato> filtrar(
             List<String> senioridadesParaFiltrar,
-            List<Candidato> candidatos
-    ) {
+            List<Candidato> candidatos) {
         List<Candidato> selecionados = new ArrayList<Candidato>();
 
-        for (Candidato candidato: candidatos)
-        {
+        for (Candidato candidato : candidatos) {
             Candidato candidatoSelecionado = filtrarCandidatoPorSenioridades(
                     senioridadesParaFiltrar,
-                    candidato
-            );
+                    candidato);
 
-            if(candidatoSelecionado != null)
-            {
+            if (candidatoSelecionado != null) {
                 selecionados.add(candidato);
             }
 
@@ -33,21 +29,14 @@ public class FiltradorPorSenioridades {
 
     private static Candidato filtrarCandidatoPorSenioridades(
             List<String> senioridadesParaFiltrar,
-            Candidato candidato
-    )
-    {
-        for (Vaga vaga
-                : candidato
-                .getVagas())
-        {
+            Candidato candidato) {
+        for (Vaga vaga : candidato
+                .getVagas()) {
 
-            for(String senioridadeParaFiltrar
-                    : senioridadesParaFiltrar
-            ) {
+            for (String senioridadeParaFiltrar : senioridadesParaFiltrar) {
 
                 if (vaga.getSenioridade()
-                        .equalsIgnoreCase(senioridadeParaFiltrar)
-                ) {
+                        .equalsIgnoreCase(senioridadeParaFiltrar)) {
 
                     return candidato;
 

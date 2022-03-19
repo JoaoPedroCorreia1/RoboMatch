@@ -7,48 +7,37 @@ import models.Candidato;
 import models.candidato.cadastro.Habilidade;
 
 public class FiltradorPorHabilidades {
-    
-    public static List<Candidato> filtrar(
-        List<Habilidade> habilidadesParaFiltrar,
-        List<Candidato> candidatos
-    ) {
 
+    public static List<Candidato> filtrar(
+            List<Habilidade> habilidadesParaFiltrar,
+            List<Candidato> candidatos) {
         List<Candidato> selecionados = new ArrayList<Candidato>();
-        
-        for (Candidato candidato : candidatos)
-        {
+
+        for (Candidato candidato : candidatos) {
             Candidato candidatoSelecionado = filtrarCandidatoPorHabilidades(
                     habilidadesParaFiltrar,
-                    candidato
-            );
+                    candidato);
 
-            if(candidatoSelecionado != null)
-            {
+            if (candidatoSelecionado != null) {
                 selecionados.add(candidato);
             }
 
         }
 
         return selecionados;
-        
     }
 
     private static Candidato filtrarCandidatoPorHabilidades(
             List<Habilidade> habilidadesParaFiltrar,
-            Candidato candidato
-    ) {
-        for (Habilidade habilidade
-                : candidato
+            Candidato candidato) {
+        for (Habilidade habilidade : candidato
                 .getCadastro()
-                .getHabilidades()
-        ) {
+                .getHabilidades()) {
 
             // checar habilidade
-            if(!eSuperior(
+            if (!eSuperior(
                     habilidade,
-                    habilidadesParaFiltrar
-               )
-            ) {
+                    habilidadesParaFiltrar)) {
 
                 return null;
 
@@ -61,28 +50,23 @@ public class FiltradorPorHabilidades {
 
     private static boolean eSuperior(
             Habilidade habilidade,
-            List<Habilidade> habilidadesParaFiltrar
-    ) {
-        for(Habilidade habilidadeParaFiltrar
-                : habilidadesParaFiltrar
-        )
-        {
+            List<Habilidade> habilidadesParaFiltrar) {
+
+        for (Habilidade habilidadeParaFiltrar : habilidadesParaFiltrar) {
+
             if (habilidade.getNome()
                     .equalsIgnoreCase(
-                            habilidadeParaFiltrar.getNome()
-                    )
-            ) {
+                            habilidadeParaFiltrar.getNome())) {
 
                 // checar nível
-                if (habilidade.getNivel()
-                        < habilidadeParaFiltrar.getNivel()
-                ) {
+                if (habilidade.getNivel() < habilidadeParaFiltrar.getNivel()) {
 
                     return false;
 
                 }
 
             }
+
         }
 
         return true;

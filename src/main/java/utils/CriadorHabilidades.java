@@ -10,53 +10,43 @@ public class CriadorHabilidades {
     public static List<Habilidade> criar(
             String nenhumas,
             String conceituais,
-            String praticas
-    ) {
+            String praticas) {
         List<Habilidade> habilidades = new ArrayList<>();
 
-        List<String> nenhuma
-                = SeparadorString
-                    .separarPorVirgulaEEspaco(nenhumas);
+        List<String> nenhuma = SeparadorString
+                .separarPorVirgulaEEspaco(nenhumas);
 
-        List<String> conceitual
-                = SeparadorString
+        List<String> conceitual = SeparadorString
                 .separarPorVirgulaEEspaco(conceituais);
 
-        List<String> pratica
-                = SeparadorString
+        List<String> pratica = SeparadorString
                 .separarPorVirgulaEEspaco(praticas);
 
-        if(!nenhuma.get(0).equals("")) {
+        if (!nenhuma.get(0).equals("")) {
             for (String habilidadeNome : nenhuma) {
                 habilidades.add(
                         new Habilidade(
                                 habilidadeNome,
-                                0
-                        )
-                );
+                                0));
             }
         }
 
-        if(!conceitual.get(0).equals("")) {
+        if (!conceitual.get(0).equals("")) {
             for (String habilidadeNome : conceitual) {
                 habilidades.add(
                         new Habilidade(
                                 habilidadeNome,
-                                1
-                        )
-                );
+                                1));
             }
 
         }
 
-        if(!pratica.get(0).equals("")) {
+        if (!pratica.get(0).equals("")) {
             for (String habilidadeNome : pratica) {
                 habilidades.add(
                         new Habilidade(
                                 habilidadeNome,
-                                2
-                        )
-                );
+                                2));
             }
         }
 

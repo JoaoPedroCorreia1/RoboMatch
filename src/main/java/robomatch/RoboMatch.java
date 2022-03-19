@@ -15,15 +15,15 @@ import java.util.List;
 public class RoboMatch {
 
     /*
-    getMatch
-
-        - não filtrar
-
-            - List<String> = null
-
-            - List<Habilidade> = null
-
-    */
+     * getMatch
+     * 
+     * - não filtrar
+     * 
+     * - List<String> = null
+     * 
+     * - List<Habilidade> = null
+     * 
+     */
     public static List<String> getEmailsMatch(
             List<String> cargosFiltrar,
 
@@ -33,25 +33,21 @@ public class RoboMatch {
 
             List<String> disponibilidadesPeriodoFiltrar,
 
-            List<Habilidade> habilidadesFiltrar
-    ) {
+            List<Habilidade> habilidadesFiltrar) {
 
         List<Candidato> selecionados = RoboCandidatos.getCandidatos();
 
         // filtrar por cargo
-        if(cargosFiltrar != null)
-        {
+        if (cargosFiltrar != null) {
 
             selecionados = FiltradorPorCargos.filtrar(
                     cargosFiltrar,
-                    selecionados
-            );
+                    selecionados);
 
         }
 
         // filtrar por senioridade
-        if(senioridadesFiltrar != null)
-        {
+        if (senioridadesFiltrar != null) {
 
             selecionados = FiltradorPorSenioridades.filtrar(
                     senioridadesFiltrar,
@@ -61,8 +57,7 @@ public class RoboMatch {
         }
 
         // filtrar por local/remoto
-        if(disponibilidadesLocalRemotoFiltrar != null)
-        {
+        if (disponibilidadesLocalRemotoFiltrar != null) {
 
             selecionados = FiltradorPorLocalRemoto.filtrar(
                     disponibilidadesLocalRemotoFiltrar,
@@ -72,31 +67,27 @@ public class RoboMatch {
         }
 
         // filtrar por período
-        if(disponibilidadesPeriodoFiltrar != null)
-        {
+        if (disponibilidadesPeriodoFiltrar != null) {
 
             selecionados = FiltradorPorPeriodos.filtrar(
                     disponibilidadesPeriodoFiltrar,
-                    selecionados
-            );
+                    selecionados);
 
         }
 
         // filtrar por habilidade
-        if(habilidadesFiltrar != null) {
+        if (habilidadesFiltrar != null) {
 
             selecionados = FiltradorPorHabilidades.filtrar(
                     habilidadesFiltrar,
-                    selecionados
-            );
+                    selecionados);
 
         }
 
         // obter emails
         List<String> emailsSelecionados = new ArrayList<String>();
 
-        for(Candidato c : selecionados)
-        {
+        for (Candidato c : selecionados) {
             String email = c.getCadastro().getEmail();
             emailsSelecionados.add(email);
         }

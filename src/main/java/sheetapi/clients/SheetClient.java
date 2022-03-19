@@ -31,14 +31,12 @@ public class SheetClient {
     // Métodos Públicos
     public static List<String> getValoresPorColuna(
             char coluna,
-            String spreadsheetId
-    ) {
+            String spreadsheetId) {
         String range = "!" + coluna + ":" + coluna;
 
         List<String> valoresColuna = getValores(
                 range,
-                spreadsheetId
-        );
+                spreadsheetId);
 
         valoresColuna.remove(0);
 
@@ -48,19 +46,15 @@ public class SheetClient {
     public static String getValorCelula(
             char posicao,
             int indice,
-            String spreadsheetId
-    )
-    {
+            String spreadsheetId) {
         String range = "!" + posicao + indice;
 
         List<String> valores = getValores(
                 range,
-                spreadsheetId
-        );
+                spreadsheetId);
 
         String valor = "";
-        if(!valores.isEmpty())
-        {
+        if (!valores.isEmpty()) {
             valor = valores.get(0);
         }
 
@@ -69,16 +63,15 @@ public class SheetClient {
 
     private static List<String> getValores(
             String range,
-            String spreadsheetId
-    ) {
+            String spreadsheetId) {
         List<String> strs = new ArrayList<>();
 
-        try{
-            ValueRange response
-                    = getService().spreadsheets().values()
+        try {
+            ValueRange response = getService().spreadsheets().values()
                     .get(
                             spreadsheetId,
-                            range).execute();
+                            range)
+                    .execute();
 
             List<List<Object>> values = response.getValues();
 
@@ -108,7 +101,6 @@ public class SheetClient {
     }
 
     /**
-     *
      * @param
      * @return
      * @throws IOException

@@ -11,8 +11,6 @@ public class RoboMatchTeste {
 
     @Test
     public void testeJoao() {
-
-
         List<String> emails = RoboMatch.getEmailsMatch(
                 Arrays.asList(
                         "analista de segurança da informação"
@@ -25,20 +23,16 @@ public class RoboMatchTeste {
                 Arrays.asList(
                         new Habilidade(
                                 "programação",
-                                1
-                        ),
+                                1),
                         new Habilidade(
                                 "sql",
-                                2
-                        )
+                                2)
                 )
         );
 
         Assert.assertEquals(
                 emails,
-                Arrays.asList(
-                        "jpmourasilva@gmail.com"
-                )
+                Arrays.asList("jpmourasilva@gmail.com")
         );
 
     }

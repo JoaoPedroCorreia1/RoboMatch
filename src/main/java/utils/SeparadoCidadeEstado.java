@@ -7,18 +7,13 @@ import java.util.List;
 public class SeparadoCidadeEstado {
 
     public static List<String> obterCidadeEstado(
-            String cidadeEstado
-    )
-    {
+            String cidadeEstado) {
         List<String> elementos = new ArrayList<>();
 
         cidadeEstado = cidadeEstado.replace(" ", "");
 
-        if(cidadeEstado.contains("/")) {
-            elementos
-                    = Arrays.asList(
-                            cidadeEstado.split("/")
-            );
+        if (cidadeEstado.contains("/")) {
+            elementos = Arrays.asList(cidadeEstado.split("/"));
         } else {
             elementos.add("");
             elementos.add("");

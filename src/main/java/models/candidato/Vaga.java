@@ -4,12 +4,12 @@ import java.util.List;
 
 public class Vaga {
 
-    private String email;
+    private final String email;
 
-    private List<String> cargosDejesados;
-    private String senioridade;
-    private List<String> disponibilidadeLocalRemoto;
-    private List<String> periodosDisponiveis;
+    private final List<String> cargosDejesados;
+    private final String senioridade;
+    private final List<String> disponibilidadeLocalRemoto;
+    private final List<String> periodosDisponiveis;
 
     public Vaga(
             String email,
@@ -17,8 +17,7 @@ public class Vaga {
             List<String> cargosDejesados,
             String senioridade,
             List<String> disponibilidadeLocalRemoto,
-            List<String> periodosDisponiveis
-    ) {
+            List<String> periodosDisponiveis) {
         this.email = email;
 
         this.cargosDejesados = cargosDejesados;
@@ -48,8 +47,7 @@ public class Vaga {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         String s = "### Vaga ###";
         s += "\n";
 
@@ -57,8 +55,7 @@ public class Vaga {
         s += "\n";
 
         s += "Cargos Desejados: ";
-        for(String cargoDesejado : getCargosDejesados())
-        {
+        for (String cargoDesejado : getCargosDejesados()) {
             s += cargoDesejado + ", ";
         }
         s += "\n";
@@ -67,15 +64,13 @@ public class Vaga {
         s += "\n";
 
         s += "Disponibilidades Local/Remoto: ";
-        for(String localRemoto : getDisponibilidadeLocalRemoto())
-        {
+        for (String localRemoto : getDisponibilidadeLocalRemoto()) {
             s += localRemoto + ", ";
         }
         s += "\n";
 
         s += "Períodos disponíveis: ";
-        for(String periodo : getPeriodosDisponiveis())
-        {
+        for (String periodo : getPeriodosDisponiveis()) {
             s += periodo + ", ";
         }
         s += "\n";
@@ -83,6 +78,5 @@ public class Vaga {
         return s;
 
     }
-
 
 }

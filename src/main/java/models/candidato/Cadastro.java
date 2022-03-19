@@ -6,19 +6,19 @@ import java.util.List;
 
 public class Cadastro {
 
-    private String nome;
-    private String email;
+    private final String nome;
+    private final String email;
 
-    private String cidade;
-    private String estado;
+    private final String cidade;
+    private final String estado;
 
-    private String linkedin;
-    private String senioridadePreferencial;
-    private String formacao;
+    private final String linkedin;
+    private final String senioridadePreferencial;
+    private final String formacao;
 
-    private String curriculo;
+    private final String curriculo;
 
-    private List<Habilidade> habilidades;
+    private final List<Habilidade> habilidades;
 
     public Cadastro(
             String nome,
@@ -33,8 +33,7 @@ public class Cadastro {
 
             String curriculo,
 
-            List<Habilidade> habilidades
-    ) {
+            List<Habilidade> habilidades) {
         this.nome = nome;
         this.email = email;
 
@@ -87,8 +86,7 @@ public class Cadastro {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         String s = "### Cadastro ###";
         s += "\n";
 
@@ -116,8 +114,7 @@ public class Cadastro {
         s += "Curriculo: " + getCurriculo();
         s += "\n";
 
-        for(Habilidade habilidade : habilidades)
-        {
+        for (Habilidade habilidade : habilidades) {
             s += habilidade.toString();
         }
 

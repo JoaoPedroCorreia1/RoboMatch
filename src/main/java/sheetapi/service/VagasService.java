@@ -12,22 +12,16 @@ public class VagasService {
     // public
 
     public static List<String> getValoresPorColuna(
-            char coluna
-    ) {
+            char coluna) {
+        List<String> valores = new ArrayList<>();
 
         try {
-
-            return SheetClient
-                    .getValoresPorColuna(
-                            coluna,
-                            planilhaVagasId
-                    );
-
+            valores = SheetClient
+                    .getValoresPorColuna(coluna, planilhaVagasId);
         } catch (Exception e) {
-
-            return new ArrayList<>();
-
+            System.out.println(e);
         }
 
+        return valores;
     }
 }

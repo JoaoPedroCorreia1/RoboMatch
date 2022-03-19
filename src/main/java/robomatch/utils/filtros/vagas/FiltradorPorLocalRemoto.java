@@ -6,25 +6,20 @@ import models.candidato.Vaga;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FiltradorPorLocalRemoto
-{
+public class FiltradorPorLocalRemoto {
 
     public static List<Candidato> filtrar(
             List<String> localRemotoParaFiltrar,
-            List<Candidato> candidatos
-    ) {
+            List<Candidato> candidatos) {
         List<Candidato> selecionados = new ArrayList<Candidato>();
 
-        for (Candidato candidato: candidatos)
-        {
+        for (Candidato candidato : candidatos) {
 
             Candidato candidatoSelecionado = filtrarCandidatoPorCargos(
                     localRemotoParaFiltrar,
-                    candidato
-            );
+                    candidato);
 
-            if(candidatoSelecionado != null)
-            {
+            if (candidatoSelecionado != null) {
                 selecionados.add(candidatoSelecionado);
             }
 
@@ -35,25 +30,19 @@ public class FiltradorPorLocalRemoto
 
     private static Candidato filtrarCandidatoPorCargos(
             List<String> localRemotoParaFiltrar,
-            Candidato candidato
-    ) {
+            Candidato candidato) {
 
-        for (Vaga vaga: candidato.getVagas())
-        {
+        for (Vaga vaga : candidato.getVagas()) {
 
-            for(String localRemoto
-                    : vaga
+            for (String localRemoto : vaga
                     .getDisponibilidadeLocalRemoto()
 
             ) {
 
-                for(String localRemotoParaFiltrarSingular
-                        : localRemotoParaFiltrar
-                ) {
+                for (String localRemotoParaFiltrarSingular : localRemotoParaFiltrar) {
 
                     if (localRemoto
-                            .equalsIgnoreCase(localRemotoParaFiltrarSingular)
-                    ) {
+                            .equalsIgnoreCase(localRemotoParaFiltrarSingular)) {
 
                         return candidato;
 

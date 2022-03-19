@@ -7,14 +7,13 @@ import java.util.List;
 
 public class Candidato {
 
-    private Cadastro cadastro;
+    private final Cadastro cadastro;
 
-    private List<Vaga> vagas;
+    private final List<Vaga> vagas;
 
     public Candidato(
             Cadastro cadastro,
-            List<Vaga> vagas
-    ) {
+            List<Vaga> vagas) {
         this.cadastro = cadastro;
         this.vagas = vagas;
     }
@@ -28,14 +27,13 @@ public class Candidato {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         String s = "### Candidato ###";
         s += "\n";
 
         s += cadastro.toString();
 
-        for(Vaga vaga : vagas)
-        {
+        for (Vaga vaga : vagas) {
             s += vaga.toString();
         }
 
