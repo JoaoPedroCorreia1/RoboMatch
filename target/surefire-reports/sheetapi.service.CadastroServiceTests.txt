@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: sheetapi.service.CadastroServiceTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.009 s - in sheetapi.service.CadastroServiceTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.709 s - in sheetapi.service.CadastroServiceTests

@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import models.candidato.Vaga;
 
-public class RoboVagasTest {
+public class RoboVagasTests {
 
     @Test
     public void obterVagasComSucesso() {

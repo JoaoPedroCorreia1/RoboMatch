@@ -7,7 +7,7 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
-public class RoboCandidatosTeste {
+public class RoboCandidatosTests {
 
     @Test
     public void obterCanditatosComSucesso() {
