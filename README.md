@@ -1,6 +1,6 @@
 # Robo Match
 Aplicativo desenvolvido para obter matchs candidato x vaga.
-Feito pelo time Base2 TechHunter 2021.
+Feito pelo time Base2 no TechHunter 2021.
 
 # Requisitos
 - Java 1.8
