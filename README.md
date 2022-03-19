@@ -7,7 +7,7 @@ Feito pelo time Base2 no TechHunter 2021.
 - Maven 3.6.3
 
 # How to run
-É Possível obter um match acessando o método "getEmailsMatch" em src/main/java/RoboMatch que retorna uma lista de emails.
+É Possível obter um match acessando o método "getEmailsMatch" em src/main/java/RoboMatch que retorna uma lista de emails utilizando informações de formulários do google drive.
 
 # Match
 ## Method Parameters
@@ -44,6 +44,41 @@ List<String> emails = RoboMatch.getEmailsMatch(
                 )
         );
 ```
-# Habilidade
+# Candidato
+- Cadastro
+- Vagas
+
+# Vagas
+https://forms.gle/2ChAbYnsfbLHozEK9
+```
+public Vaga(
+            String email,
+
+            List<String> cargosDejesados,
+            String senioridade,
+            List<String> disponibilidadeLocalRemoto,
+            List<String> periodosDisponiveis)
+```
+
+# Cadastro
+https://forms.gle/2ChAbYnsfbLHozEK9
+```
+public Cadastro(
+            String nome,
+            String email,
+
+            String cidade,
+            String estado,
+
+            String linkedin,
+            String senioridadePreferencial,
+            String formacao,
+
+            String curriculo,
+
+            List<Habilidade> habilidades)
+```
+
+## Habilidade
 - nome
 - nível (0 (nenhum) a 2 (avançado))
