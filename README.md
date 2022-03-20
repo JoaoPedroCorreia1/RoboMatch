@@ -11,7 +11,7 @@ Feito pelo time Base2 no TechHunter 2021.
 
 # Match
 ## Method Parameters
-```
+```java
 public static List<String> getEmailsMatch(
             List<String> cargosFiltrar,
 
@@ -24,7 +24,7 @@ public static List<String> getEmailsMatch(
             List<Habilidade> habilidadesFiltrar)
 ```
 ## Example
-```
+```java
 List<String> emails = RoboMatch.getEmailsMatch(
                 Arrays.asList(
                         "analista de segurança da informação"
@@ -50,7 +50,7 @@ List<String> emails = RoboMatch.getEmailsMatch(
 
 # Vagas
 https://forms.gle/2ChAbYnsfbLHozEK9
-```
+```java
 public Vaga(
             String email,
 
@@ -62,7 +62,7 @@ public Vaga(
 
 # Cadastro
 https://forms.gle/2ChAbYnsfbLHozEK9
-```
+```java
 public Cadastro(
             String nome,
             String email,
