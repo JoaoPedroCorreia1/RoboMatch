@@ -1,7 +1,5 @@
 package robovagas;
 
-import java.io.IOException;
-import java.security.GeneralSecurityException;
 import java.util.List;
 
 import org.junit.Assert;

@@ -11,6 +11,9 @@ public class FiltradorPorPeriodos {
     public static List<Candidato> filtrar(
             List<String> periodosDisponiveisFiltrar,
             List<Candidato> candidatos) {
+        if(periodosDisponiveisFiltrar.isEmpty()) {
+            return candidatos;
+        }
 
         List<Candidato> selecionados = new ArrayList<Candidato>();
 

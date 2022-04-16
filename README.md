@@ -12,7 +12,7 @@ Feito pelo time Base2 no TechHunter 2021.
 # Match
 ## Method Parameters
 ```
-public static List<String> getEmailsMatch(
+public static List<String> getMatch(
             List<String> cargosFiltrar,
 
             List<String> senioridadesFiltrar,
@@ -25,7 +25,7 @@ public static List<String> getEmailsMatch(
 ```
 ## Example
 ```
-List<String> emails = RoboMatch.getEmailsMatch(
+List<String> emails = RoboMatch.getMatch(
                 Arrays.asList(
                         "analista de segurança da informação"
                 ),

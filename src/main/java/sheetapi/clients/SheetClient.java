@@ -4,7 +4,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.GeneralSecurityException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.HttpRequestInitializer;
@@ -79,9 +82,9 @@ public class SheetClient {
 
             } else {
 
-                for (List row : values) {
+                for (List<Object> row : values) {
 
-                    Iterator iterator = row.listIterator();
+                    Iterator<Object> iterator = row.listIterator();
 
                     while (iterator.hasNext()) {
 

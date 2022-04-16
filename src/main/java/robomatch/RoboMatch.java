@@ -17,14 +17,11 @@ public class RoboMatch {
     /*
      * getMatch
      * 
-     * - não filtrar
+     * - Para Não Filtrar:
      * 
-     * - List<String> = null
-     * 
-     * - List<Habilidade> = null
-     * 
+     * - valor = null
      */
-    public static List<String> getEmailsMatch(
+    public static List<String> getMatch(
             List<String> cargosFiltrar,
 
             List<String> senioridadesFiltrar,
@@ -34,55 +31,29 @@ public class RoboMatch {
             List<String> disponibilidadesPeriodoFiltrar,
 
             List<Habilidade> habilidadesFiltrar) {
-
+        // obter dados do googlesheet
         List<Candidato> selecionados = RoboCandidatos.getCandidatos();
 
-        // filtrar por cargo
-        if (cargosFiltrar != null) {
+        // filtrar
+        selecionados = FiltradorPorCargos.filtrar(
+                cargosFiltrar,
+                selecionados);
 
-            selecionados = FiltradorPorCargos.filtrar(
-                    cargosFiltrar,
-                    selecionados);
-
-        }
-
-        // filtrar por senioridade
-        if (senioridadesFiltrar != null) {
-
-            selecionados = FiltradorPorSenioridades.filtrar(
+        selecionados = FiltradorPorSenioridades.filtrar(
                     senioridadesFiltrar,
-                    selecionados
-
-            );
-        }
-
-        // filtrar por local/remoto
-        if (disponibilidadesLocalRemotoFiltrar != null) {
-
-            selecionados = FiltradorPorLocalRemoto.filtrar(
-                    disponibilidadesLocalRemotoFiltrar,
-                    selecionados
-
-            );
-        }
-
-        // filtrar por período
-        if (disponibilidadesPeriodoFiltrar != null) {
-
-            selecionados = FiltradorPorPeriodos.filtrar(
-                    disponibilidadesPeriodoFiltrar,
                     selecionados);
 
-        }
+        selecionados = FiltradorPorLocalRemoto.filtrar(
+            disponibilidadesLocalRemotoFiltrar,
+            selecionados);
 
-        // filtrar por habilidade
-        if (habilidadesFiltrar != null) {
+        selecionados = FiltradorPorPeriodos.filtrar(
+            disponibilidadesPeriodoFiltrar,
+            selecionados);
 
-            selecionados = FiltradorPorHabilidades.filtrar(
-                    habilidadesFiltrar,
-                    selecionados);
-
-        }
+        selecionados = FiltradorPorHabilidades.filtrar(
+            habilidadesFiltrar,
+            selecionados);
 
         // obter emails
         List<String> emailsSelecionados = new ArrayList<String>();
@@ -92,7 +63,6 @@ public class RoboMatch {
             emailsSelecionados.add(email);
         }
 
-        // retornar emails
         return emailsSelecionados;
     }
 

@@ -1,12 +1,9 @@
 package sheetapi.service;
 
-import models.candidato.cadastro.Habilidade;
-import sheetapi.clients.SheetClient;
-import utils.CriadorHabilidades;
-import utils.SeparadorString;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import sheetapi.clients.SheetClient;
 
 public class CadastrosService {
 

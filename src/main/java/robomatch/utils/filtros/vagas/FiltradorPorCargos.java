@@ -11,6 +11,10 @@ public class FiltradorPorCargos {
     public static List<Candidato> filtrar(
             List<String> cargosParaFiltrar,
             List<Candidato> candidatos) {
+        if(cargosParaFiltrar.isEmpty()) {
+            return candidatos;
+        }
+        
         List<Candidato> selecionados = new ArrayList<>();
 
         for (Candidato candidato : candidatos) {

@@ -11,7 +11,7 @@ public class RoboMatchTests {
 
     @Test
     public void obterCandidatoJoaoComSucesso() {
-        List<String> emails = RoboMatch.getEmailsMatch(
+        List<String> emails = RoboMatch.getMatch(
                 Arrays.asList(
                         "analista de segurança da informação"
                 ),

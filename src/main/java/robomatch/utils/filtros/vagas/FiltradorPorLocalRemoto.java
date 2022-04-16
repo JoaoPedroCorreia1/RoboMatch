@@ -11,6 +11,10 @@ public class FiltradorPorLocalRemoto {
     public static List<Candidato> filtrar(
             List<String> localRemotoParaFiltrar,
             List<Candidato> candidatos) {
+        if(localRemotoParaFiltrar.isEmpty()) {
+            return candidatos;
+        }
+
         List<Candidato> selecionados = new ArrayList<Candidato>();
 
         for (Candidato candidato : candidatos) {

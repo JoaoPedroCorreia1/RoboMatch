@@ -11,6 +11,10 @@ public class FiltradorPorHabilidades {
     public static List<Candidato> filtrar(
             List<Habilidade> habilidadesParaFiltrar,
             List<Candidato> candidatos) {
+        if(habilidadesParaFiltrar.isEmpty()) {
+            return candidatos;
+        }
+
         List<Candidato> selecionados = new ArrayList<Candidato>();
 
         for (Candidato candidato : candidatos) {

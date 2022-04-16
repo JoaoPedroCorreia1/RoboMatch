@@ -11,6 +11,10 @@ public class FiltradorPorSenioridades {
     public static List<Candidato> filtrar(
             List<String> senioridadesParaFiltrar,
             List<Candidato> candidatos) {
+        if(senioridadesParaFiltrar.isEmpty()) {
+            return candidatos;
+        }
+        
         List<Candidato> selecionados = new ArrayList<Candidato>();
 
         for (Candidato candidato : candidatos) {
