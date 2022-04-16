@@ -1,17 +1,18 @@
 # Robo Match
-Aplicativo desenvolvido para obter matchs candidato x vaga.
-Feito pelo time Base2 no TechHunter 2021.
+Feito pelo time Base2 no TechHunter 2021-2.
 
-# Requisitos
+## Introdução
+Serviço desenvolvido para obter matchs Candidato x Vaga, utiliza dados de planilhas google obtidas de formulários google.
+
+## Requisitos
 - Java 1.8
 - Maven 3.6.3
 
-# How to run
-É Possível obter um match acessando o método "getEmailsMatch" em src/main/java/RoboMatch que retorna uma lista de emails utilizando informações de formulários do google drive.
+## How to run
+Utilize a função RoboMatch.getMatch() em src/main/java/RoboMatch/RoboMatch.java.
 
-# Match
-## Method Parameters
-```
+### Method Parameters
+```java
 public static List<String> getMatch(
             List<String> cargosFiltrar,
 
@@ -23,8 +24,8 @@ public static List<String> getMatch(
 
             List<Habilidade> habilidadesFiltrar)
 ```
-## Example
-```
+### Example
+```java
 List<String> emails = RoboMatch.getMatch(
                 Arrays.asList(
                         "analista de segurança da informação"
@@ -44,13 +45,13 @@ List<String> emails = RoboMatch.getMatch(
                 )
         );
 ```
-# Candidato
+## Candidato
 - Cadastro
 - Vagas
 
-# Vagas
+## Vagas
 https://forms.gle/2ChAbYnsfbLHozEK9
-```
+```java
 public Vaga(
             String email,
 
@@ -60,9 +61,9 @@ public Vaga(
             List<String> periodosDisponiveis)
 ```
 
-# Cadastro
+## Cadastro
 https://forms.gle/2ChAbYnsfbLHozEK9
-```
+```java
 public Cadastro(
             String nome,
             String email,
@@ -79,6 +80,6 @@ public Cadastro(
             List<Habilidade> habilidades)
 ```
 
-## Habilidade
+### Habilidade
 - nome
 - nível (0 (nenhum) a 2 (avançado))
