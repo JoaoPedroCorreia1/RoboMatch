@@ -5,7 +5,7 @@ Feito pelo time Base2 no TechHunter 2021-2.
 Serviço desenvolvido para obter matchs Candidato x Vaga, utiliza dados de planilhas google obtidas de formulários google.
 
 ## Requisitos
-- Java 1.8
+- Java 11
 - Maven 3.6.3
 
 ## How to run
